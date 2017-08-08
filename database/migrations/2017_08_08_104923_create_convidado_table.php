@@ -14,8 +14,15 @@ class CreateConvidadoTable extends Migration
     public function up()
     {
         Schema::create('convidado', function (Blueprint $table) {
-            $table->increments('id');
+            //Foi trocado a chave estrangeira de usuario_idusuario para idusuario para não ficar redundante
+            $table->unsignedInteger('idusuario');
+            $table->boolean('temPermissaoParaConvite');
+            //Foi trocado a chave estrangeira de festa_idfesta para idfesta para não ficar redundante
+            $table->unsignedInteger('idfesta');
             $table->timestamps();
+
+            $table->foreign('idusuario')->references('idusuario')->on('usuario');
+            $table->foreign('idfesta')->references('idfesta')->on('festa');
         });
     }
 

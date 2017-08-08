@@ -14,7 +14,18 @@ class CreateAcompanhanteTable extends Migration
     public function up()
     {
         Schema::create('acompanhante', function (Blueprint $table) {
-            $table->increments('id');
+            //Foi trocado a chave estrangeira de usuario_idusuario para idusuario para não ficar redundante
+            $table->unsignedInteger('idusuario');
+            //Foi trocado a chave estrangeira de festa_idfesta para idfesta para não ficar redundante
+            $table->unsignedInteger('idfesta');
+            $table->char('sexo',1);
+            $table->string('nome');
+            $table->Integer('idade');
+            $table->string('parentesco');
+
+            $table->foreign('idusuario')->references('idusuario')->on('usuario');
+            $table->foreign('idfesta')->references('idfesta')->on('festa');
+
             $table->timestamps();
         });
     }
