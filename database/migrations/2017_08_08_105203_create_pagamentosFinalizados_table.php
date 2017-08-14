@@ -14,10 +14,10 @@ class CreatePagamentosFinalizadosTable extends Migration
     public function up()
     {
         Schema::create('pagamentosFinalizados', function (Blueprint $table) {
-            $table->unsignedInteger('usuario_idusuario');
+            $table->unsignedInteger('users_idusuario');
             $table->unsignedInteger('festa_idfesta');
 
-            $table->foreign('usuario_idusuario')->references('idusuario')->on('usuario');
+            $table->foreign('users_idusuario')->references('idusuario')->on('users');
             $table->foreign('festa_idfesta')->references('idfesta')->on('festa');
 
             $table->timestamps();

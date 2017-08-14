@@ -19,8 +19,6 @@ class CreateMensagensTable extends Migration
             $table->longText('corpo');
             $table->unsignedInteger('festa_idfesta');
 
-            $table->primary('idmensagens');
-
             $table->foreign('festa_idfesta')->references('idfesta')->on('festa');
 
             $table->timestamps();

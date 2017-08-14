@@ -14,14 +14,14 @@ class CreateAcompanhanteTable extends Migration
     public function up()
     {
         Schema::create('acompanhante', function (Blueprint $table) {
-            $table->unsignedInteger('usuario_idusuario');
+            $table->unsignedInteger('users_idusuario');
             $table->unsignedInteger('festa_idfesta');
             $table->char('sexo',1);
             $table->string('nome');
             $table->Integer('idade');
             $table->string('parentesco');
 
-            $table->foreign('usuario_idusuario')->references('idusuario')->on('usuario');
+            $table->foreign('users_idusuario')->references('idusuario')->on('users');
             $table->foreign('festa_idfesta')->references('idfesta')->on('festa');
 
             $table->timestamps();

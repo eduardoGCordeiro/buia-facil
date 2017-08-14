@@ -15,8 +15,8 @@ class CreateFestaTable extends Migration
     {
         Schema::create('festa', function (Blueprint $table) {
             $table->increments('idfesta');
-            $table->unsignedInteger('usuario_idusuario');
-            $table->decimal('valorIngresso', 10.2);
+            $table->unsignedInteger('users_idusuario');
+            $table->decimal('valorIngresso', 10,2);
             $table->string('endereco');
             $table->string('cidade');
             $table->string('pais');
@@ -24,9 +24,7 @@ class CreateFestaTable extends Migration
             //Trocado o nome de ehParticular só para particular
             $table->boolean('particular');
 
-            $table->primary('idfesta');
-
-            $table->foreign('usuario_idusuario')->references('idusuario')->on('usuario');
+            $table->foreign('users_idusuario')->references('idusuario')->on('users');
 
             $table->timestamps();
         });

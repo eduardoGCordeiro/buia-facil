@@ -16,10 +16,10 @@ class CreateHistoricoLoginTable extends Migration
         Schema::create('historicoLogin', function (Blueprint $table) {
             $table->increments('idhistoricoLogin');
             $table->dateTime('dateTimeLogin');
-            //Foi trocado a chave estrangeira de usuario_idusuario para idusuario para não ficar redundante
-            $table->unsignedInteger('usuario_idusuario');
+            //Foi trocado a chave estrangeira de users_idusuario para idusuario para não ficar redundante
+            $table->unsignedInteger('users_idusuario');
 
-            $table->foreign('usuario_idusuario')->references('idusuario')->on('usuario');
+            $table->foreign('users_idusuario')->references('idusuario')->on('users');
 
             $table->timestamps();
         });

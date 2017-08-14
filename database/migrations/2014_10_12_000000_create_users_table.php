@@ -22,8 +22,6 @@ class CreateUsersTable extends Migration
             $table->date('dataCadastro');
             $table->string('password');
 
-            $table->primary('idusuario');
-
             $table->rememberToken();
             $table->timestamps();
         });

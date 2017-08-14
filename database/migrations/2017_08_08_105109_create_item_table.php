@@ -16,7 +16,7 @@ class CreateItemTable extends Migration
         Schema::create('item', function (Blueprint $table) {
             $table->unsignedInteger('festa_idfesta');
             $table->string('nome');
-            $table->decimal('precoIndividual', 10.2);
+            $table->decimal('precoIndividual', 10,2);
             $table->integer('quantidade');
 
             $table->foreign('festa_idfesta')->references('idfesta')->on('festa');

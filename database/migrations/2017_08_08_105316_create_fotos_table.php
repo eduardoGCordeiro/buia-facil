@@ -19,8 +19,6 @@ class CreateFotosTable extends Migration
             $table->boolean('aprovada');
             $table->unsignedInteger('festa_idfesta');
 
-            $table->primary('idfotos');
-
             $table->foreign('festa_idfesta')->references('idfesta')->on('festa');
 
             $table->timestamps();
