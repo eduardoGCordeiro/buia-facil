@@ -18,12 +18,13 @@ class CreateUsersTable extends Migration
             $table->string('nome');
             $table->date('dataNascimento');
             $table->string('email')->unique();
-            $table->char('cpf',11)->unique();
+            $table->char('cpf', 11)->unique();
             $table->date('dataCadastro');
             $table->string('password');
 
             $table->rememberToken();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

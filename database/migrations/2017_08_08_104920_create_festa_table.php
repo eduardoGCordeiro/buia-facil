@@ -27,6 +27,7 @@ class CreateFestaTable extends Migration
             $table->foreign('users_idusuario')->references('idusuario')->on('users');
 
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
