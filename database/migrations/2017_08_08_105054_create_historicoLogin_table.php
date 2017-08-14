@@ -17,9 +17,9 @@ class CreateHistoricoLoginTable extends Migration
             $table->increments('idhistoricoLogin');
             $table->dateTime('dateTimeLogin');
             //Foi trocado a chave estrangeira de usuario_idusuario para idusuario para não ficar redundante
-            $table->unsignedInteger('idusuario');
+            $table->unsignedInteger('usuario_idusuario');
 
-            $table->foreign('idusuario')->references('idusuario')->on('usuario');
+            $table->foreign('usuario_idusuario')->references('idusuario')->on('usuario');
 
             $table->timestamps();
         });

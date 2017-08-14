@@ -15,9 +15,8 @@ class CreateFestaTable extends Migration
     {
         Schema::create('festa', function (Blueprint $table) {
             $table->increments('idfesta');
-            //Foi trocado a chave estrangeira de usuario_idusuario para idusuario para não ficar redundante
-            $table->unsignedInteger('idusuario');
-            $table->decimal('valorIngresso',10.2);
+            $table->unsignedInteger('usuario_idusuario');
+            $table->decimal('valorIngresso', 10.2);
             $table->string('endereco');
             $table->string('cidade');
             $table->string('pais');
@@ -27,7 +26,7 @@ class CreateFestaTable extends Migration
 
             $table->primary('idfesta');
 
-            $table->foreign('idusuario')->references('idusuario')->on('usuario');
+            $table->foreign('usuario_idusuario')->references('idusuario')->on('usuario');
 
             $table->timestamps();
         });
