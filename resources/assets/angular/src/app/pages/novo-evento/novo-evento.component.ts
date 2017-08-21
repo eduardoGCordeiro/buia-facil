@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-novo-evento',
@@ -7,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NovoEventoComponent implements OnInit {
 
-  constructor() { }
+  public evento: string;
+
+  constructor() {
+  }
 
   ngOnInit() {
   }
