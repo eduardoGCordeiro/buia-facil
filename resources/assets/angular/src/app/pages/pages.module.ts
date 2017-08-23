@@ -6,13 +6,14 @@ import {EventoComponent} from './evento/evento.component';
 import {NovoEventoComponent} from './novo-evento/novo-evento.component';
 import {LoginComponent} from './login/login.component';
 import {InicioComponent} from './inicio/inicio.component';
+import {PagesComponent} from "./pages.component";
 
 @NgModule({
-  imports: [
-    CommonModule,
-    PagesRoutingModule
-  ],
-  declarations: [EventoComponent, NovoEventoComponent, LoginComponent, InicioComponent]
+    imports: [
+        CommonModule,
+        PagesRoutingModule
+    ],
+    declarations: [PagesComponent, EventoComponent, NovoEventoComponent, LoginComponent, InicioComponent]
 })
 export class PagesModule {
 }
