@@ -2,8 +2,10 @@
 
 namespace BuiaFacil\Providers;
 
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+use Laravel\Passport\Passport;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -25,6 +27,8 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        Passport::routes();
+        Passport::tokensExpireIn(Carbon::now()->addDays(7));
+        Passport::refreshTokensExpireIn(Carbon::now()->addDays(14));
     }
 }

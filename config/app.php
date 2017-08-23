@@ -176,7 +176,7 @@ return [
         // BuiaFacil\Providers\BroadcastServiceProvider::class,
         BuiaFacil\Providers\EventServiceProvider::class,
         BuiaFacil\Providers\RouteServiceProvider::class,
-
+        Laravel\Passport\PassportServiceProvider::class,
     ],
 
     /*
