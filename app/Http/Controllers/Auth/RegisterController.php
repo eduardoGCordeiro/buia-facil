@@ -4,6 +4,7 @@ namespace BuiaFacil\Http\Controllers\Auth;
 
 use BuiaFacil\User;
 use BuiaFacil\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
@@ -40,32 +41,23 @@ class RegisterController extends Controller
     }
 
     /**
-     * Get a validator for an incoming registration request.
-     *
-     * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
-     */
-    protected function validator(array $data)
-    {
-        return Validator::make($data, [
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
-        ]);
-    }
-
-    /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array  $data
+     * @param  array $data
      * @return \BuiaFacil\User
      */
-    protected function create(array $data)
+    protected function create(Request $request)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
+        $this->validate($request, [
+            'nome' => 'required|max:255',
+            'dataNascimento' => 'required|date',
+            'email' => 'required|unique|max:255',
+            'cpf' => 'required|unique|max:11',
+            'password' => 'required|unique|max:255'
         ]);
+         $user = new User();
+         $user->fill($request->all());
+         $user->save();
+         return response(null,200);
     }
 }
