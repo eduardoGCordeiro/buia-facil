@@ -27,20 +27,23 @@ class LoginController extends Controller {
      * @return void
      */
     public function __construct() {
-        $this->middleware('guest')->except('logout');
+        $this->middleware('guest')->only('store');
+        $this->middleware('auth:api')->only('logout');
     }
 
     public function store(Request $request) {
-        $credentials = array('email' => $request->email, 'password' => sha1($request->password));
-        if (Auth::attempt($credentials)) {
-            $token = Auth::user()->createToken('API_Token')->accessToken;
+        $credentials = ['email' => $request->email, 'password' => sha1($request->password)];
+        if (!Auth::attempt($credentials))
+            return response('Unauthorised', 401);
 
-            return response(compact('token'), 200);
-        }
-
-        return response("Unauthorised", 401);
+        $token = Auth::user()->createToken('API_TOKEN', [])->accessToken;
+        return response(compact('token'), 200);
     }
 
-    public function logout() {
+    public function logout(Request $request) {
+        $request->user()->token()->revoke();
+        $request->user()->token()->delete();
+
+        return response('Signed Out', 200);
     }
 }
