@@ -17,12 +17,9 @@ class CreateFotosTable extends Migration
             $table->increments('idfotos');
             $table->string('nomefoto');
             $table->boolean('aprovada');
-            //Foi trocado a chave estrangeira de festa_idfesta para idfesta para não ficar redundante
-            $table->unsignedInteger('idfesta');
+            $table->unsignedInteger('festa_idfesta');
 
-            $table->primary('idfotos');
-
-            $table->foreign('idfesta')->references('idfesta')->on('festa');
+            $table->foreign('festa_idfesta')->references('idfesta')->on('festa');
 
             $table->timestamps();
         });

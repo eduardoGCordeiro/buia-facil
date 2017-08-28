@@ -17,12 +17,9 @@ class CreateMensagensTable extends Migration
             $table->increments('idmensagens');
             $table->string('titulo');
             $table->longText('corpo');
-            //Foi trocado a chave estrangeira de festa_idfesta para idfesta para não ficar redundante
-            $table->unsignedInteger('idfesta');
+            $table->unsignedInteger('festa_idfesta');
 
-            $table->primary('idmensagens');
-
-            $table->foreign('idfesta')->references('idfesta')->on('festa');
+            $table->foreign('festa_idfesta')->references('idfesta')->on('festa');
 
             $table->timestamps();
         });

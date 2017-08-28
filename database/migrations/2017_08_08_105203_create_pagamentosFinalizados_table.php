@@ -14,13 +14,11 @@ class CreatePagamentosFinalizadosTable extends Migration
     public function up()
     {
         Schema::create('pagamentosFinalizados', function (Blueprint $table) {
-            //Foi trocado a chave estrangeira de usuario_idusuario para idusuario para não ficar redundante
-            $table->unsignedInteger('idusuario');
-            //Foi trocado a chave estrangeira de festa_idfesta para idfesta para não ficar redundante
-            $table->unsignedInteger('idfesta');
+            $table->unsignedInteger('users_idusuario');
+            $table->unsignedInteger('festa_idfesta');
 
-            $table->foreign('idusuario')->references('idusuario')->on('usuario');
-            $table->foreign('idfesta')->references('idfesta')->on('festa');
+            $table->foreign('users_idusuario')->references('idusuario')->on('users');
+            $table->foreign('festa_idfesta')->references('idfesta')->on('festa');
 
             $table->timestamps();
         });

@@ -4,9 +4,8 @@ namespace BuiaFacil\Http\Controllers\Auth;
 
 use BuiaFacil\User;
 use BuiaFacil\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\RegistersUsers;
-use Zend\Diactoros\Request;
 
 class RegisterController extends Controller {
     /*
