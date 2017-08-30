@@ -47,6 +47,8 @@ class RegisterController extends Controller
                 'nome' => 'required|string|max:255',
                 'email' => 'required|string|email|max:255|unique:users',
                 'password' => 'required|string|min:6|confirmed',
+                'cpf' => 'required|size:11|unique:users',
+                'dataNascimento' => 'required|date_format:Ymd'
             ]);
             if ($validator->fails())
                 return response($validator->errors(), 419);
