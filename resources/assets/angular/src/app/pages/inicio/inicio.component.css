@@ -111,7 +111,7 @@ border-bottom: 5px solid #FFC001;  }
   text-align: center;
   color: #ffc001;
   border-bottom: 5px solid #FFC001;
-  background: url("../../../assets/images/intro-bg.png") no-repeat bottom center scroll;
+  background: url("/assets/images/intro-bg.png") no-repeat bottom center scroll;
   background-color: white;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -152,7 +152,7 @@ border-bottom: 5px solid #FFC001;  }
     background: rgba(255, 255, 255, 0.1); }
 
 #contact{
-    background: url("../../../assets/images/login-bg.png") no-repeat center center scroll;
+    background: url("/assets/images/login-bg.png") no-repeat center center scroll;
     background-color: white;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -166,7 +166,7 @@ border-bottom: 5px solid #FFC001;  }
 
 .login-section {
   color: #FFC001;
-  background: url("../../../assets/images/login-bg.png") no-repeat center center scroll;
+  background: url("/assets/images/login-bg.png") no-repeat center center scroll;
   background-color: white;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -191,10 +191,6 @@ border-bottom: 5px solid #FFC001;  }
   }
   #map {
     height: 350px; } }
-.form-control
-{
-  color:
-}
 .btn {
   font-family: 'Coiny', cursive;
   font-weight: 400;
