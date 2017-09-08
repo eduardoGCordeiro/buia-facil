@@ -1,3 +1,138 @@
-<p>
-  inicio works!
-</p>
+
+<!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#about">Sobre</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" id="login-modal-link" data-toggle="modal" data-target="#flipFlop">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#contact">Contato</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#flipFlop">
+Click Me
+</button>
+
+<!-- The modal -->
+<div class="modal fade" id="flipFlop" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+<h4 class="modal-title" id="modalLabel">Login</h4>
+</div>
+
+
+
+<div class="modal-body">
+  <div class="row">
+    <div class="col-lg-12 mx-auto">
+      <div class="form-group row">
+        <label for="email-input" class="col-2 col-form-label">Email</label>
+        <div class="col-10">
+          <input class="form-control" type="email" value="Seu email...." id="email-input">
+        </div>
+      </div>
+      <div class="form-group row">
+  <label for="password-input" class="col-2 col-form-label">Senha</label>
+  <div class="col-10">
+    <input class="form-control" type="password" value="hunter2" id="password-input">
+  </div>
+</div>
+</div>
+  </div>
+    </div>
+<div class="modal-footer">
+    <div class="row">
+<button id="lgn-btn" type="button" class="btn-default" data-dismiss="modal">Login</button>
+
+
+<button id="crt-acc-btn" type="button" class="btn-default" data-dismiss="modal">Criar conta</button>
+
+        </div>
+            </div>
+</div>
+</div>
+</div>
+</div>
+
+    <!-- Intro Header -->
+    <header class="masthead">
+      <div class="intro-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="content-section text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2>O que é o BuiaFácil?</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nisi diam, tristique sit amet feugiat non, efficitur ut felis. Proin a augue ornare, ultrices quam ut, condimentum libero. Maecenas nec laoreet arcu. Morbi  condimentum eu libero ut consectetur. Nunc eu nunc a nisi posuere dapibus. Donec quis justo neque. Nullam pellentesque dui ut quam tristique consectetur.</p><p> Duis ante nisl, eleifend et est ac, ornare feugiat tortor. Cras accumsan nibh nec condimentum placerat. Donec vitae ante a magna euismod sodales ac eget arcu. Praesent efficitur euismod nunc, in tincidunt magna ultricies sed. Vivamus condimentum sem sed ipsum pretium, eu varius nisl efficitur. Curabitur volutpat dapibus est. Cras molestie erat et dolor ultrices porta. </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="content-section text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <div class="card" id="login-card">
+              <div class="card-block">
+            <h2 id="titulo-contato">Dúvidas? Sugestões? Comentários?</h2>
+            <p>Sinta-le livre para nos contactar!</p>
+            <ul class="list-inline banner-social-buttons">
+              <li class="list-inline-item">
+                <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg">
+                  <i class="fa fa-twitter fa-fw"></i>
+                  <span class="network-name">Twitter</span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://github.com/BlackrockDigital/startbootstrap" class="btn btn-default btn-lg">
+                  <i class="fa fa-github fa-fw"></i>
+                  <span class="network-name">Github</span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://plus.google.com/+Startbootstrap/posts" class="btn btn-default btn-lg">
+                  <i class="fa fa-google-plus fa-fw"></i>
+                  <span class="network-name">Google+</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+<footer>
+      <div class="container text-center">
+        <p>Copyright &copy; AEC-Empresa 2017</p>
+      </div>
+ </footer>
