@@ -2,7 +2,9 @@
 
 namespace BuiaFacil\Http\Controllers;
 
+use BuiaFacil\Evento;
 use Illuminate\Http\Request;
+use PhpParser\Node\Stmt\Return_;
 
 class EventosController extends Controller
 {
@@ -13,7 +15,7 @@ class EventosController extends Controller
      */
     public function index()
     {
-        //
+        return Evento::all();
     }
 
     /**
@@ -23,7 +25,7 @@ class EventosController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -34,7 +36,7 @@ class EventosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return Evento::create($request->all());
     }
 
     /**
@@ -68,7 +70,9 @@ class EventosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $evento = Evento::find($id);
+        $evento->fill($request->all());
+        return $evento->save();
     }
 
     /**
@@ -79,6 +83,6 @@ class EventosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $evento = Evento::delete($id);
     }
 }
