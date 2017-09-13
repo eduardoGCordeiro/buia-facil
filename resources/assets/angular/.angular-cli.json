@@ -27,7 +27,8 @@
         "../node_modules/tether/dist/js/tether.js",
         "../node_modules/popper.js/dist/umd/popper.min.js",
         "../node_modules/bootstrap/dist/js/bootstrap.js",
-        "../node_modules/jquery.easing/jquery.easing.min.js"
+        "../node_modules/jquery.easing/jquery.easing.min.js",
+        "assets/js/inicio.min.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {
