@@ -16,3 +16,4 @@ use Illuminate\Http\Request;
 
 Route::post('cadastro', 'Auth\RegisterController@store');
 Route::resource('users','UsersController');
+Route::resource('eventos','EventosController');
