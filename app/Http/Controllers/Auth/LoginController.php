@@ -33,6 +33,7 @@ class LoginController extends Controller {
 
     public function store(Request $request) {
         $credentials = ['email' => $request->email, 'password' => sha1($request->password)];
+        dd($credentials);
         if (!Auth::attempt($credentials))
             return response('Unauthorised', 401);
 

@@ -46,7 +46,7 @@ class UsersController extends Controller
      */
     public function show($id)
     {
-        return User::find($id);
+        return response()->json(User::find($id));
     }
 
     /**
@@ -69,10 +69,10 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $user = User::find($id);
+        $user = $request->user();
         try {
             $validator = Validator::make($request->all(), [
-                'nome' => 'required|string|max:255',
+                'nome' => 'required|string|max:255|alpha|min:3',
                 'email' => 'required|string|email|max:255|unique:users',
                 'dataNascimento' => 'required|date_format:Ymd'
             ]);
@@ -80,7 +80,6 @@ class UsersController extends Controller
                 return response($validator->errors(), 419);
             $user->fill($request->all());
             $user->save();
-
             return response('User updated', 200);
         } catch (\Exception $exception) {
             return response($exception->getMessage(), 401);

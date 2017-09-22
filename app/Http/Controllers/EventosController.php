@@ -17,7 +17,7 @@ class EventosController extends Controller
      */
     public function index()
     {
-        return Evento::all();
+        return response()->json(Evento::all());
     }
 
     /**
@@ -50,8 +50,9 @@ class EventosController extends Controller
             if ($validator->fails())
                 return response($validator->errors(), 419);
             $evento = new Evento();
-            $userid = Auth::id();
-            $evento->fill($evento, ['usuario_idusuario' => $userid]);
+            $userid = $request->user()->id;
+            $evento->fill($request->all());
+            $evento->user_idusuario = $userid;
             if ($evento->save())
                 return response('Evento criado', 200);
             return response('Erro ao salvar evento', 419);
@@ -126,6 +127,6 @@ class EventosController extends Controller
     public
     function destroy($id)
     {
-        $evento = Evento::delete($id);
+        return Evento::delete($id);
     }
 }
