@@ -44,7 +44,7 @@ class RegisterController extends Controller
     {
         try {
             $validator = Validator::make($request->all(), [
-                'nome' => 'required|string|max:255',
+                'nome' => 'required|string|max:255|min:3|alpha',
                 'email' => 'required|string|email|max:255|unique:users',
                 'password' => 'required|string|min:6|confirmed',
                 'cpf' => 'required|size:11|unique:users',
