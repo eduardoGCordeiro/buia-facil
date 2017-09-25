@@ -1,0 +1,176 @@
+body {
+  font-family: 'Coiny', cursive;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  color: #ffc001;
+  background-color: white; }
+
+html {
+  width: 100%;
+  height: 100%; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Coiny', cursive;
+  font-weight: 700;
+  margin: 0 0 35px;
+  letter-spacing: 1px;
+  text-transform: uppercase; }
+
+p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0 0 25px; }
+  @media (min-width: 768px) {
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin: 0 0 35px; } }
+
+a {
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  color: #42DCA3; }
+  a:focus, a:hover {
+    text-decoration: none;
+    color: #1d9b6c; }
+
+    footer {
+        color: #606060;
+      border-top: 5px solid #FFC001;
+      padding: 50px 0; }
+      footer p {
+        font-size: 14px;
+        margin: 0; }
+
+    ::-moz-selection {
+      background: #fcfcfc;
+      background: rgba(255, 255, 255, 0.2);
+      text-shadow: none; }
+
+    ::selection {
+      background: #fcfcfc;
+      background: rgba(255, 255, 255, 0.2);
+      text-shadow: none; }
+
+    img::selection {
+      background: transparent; }
+
+    img::-moz-selection {
+      background: transparent; }
+
+    body {
+      -webkit-tap-highlight-color: rgba(255, 255, 255, 0.2); }
+@media (min-width: 992px)
+{
+  #logo{
+    display: block;
+    margin-bottom: 200px;
+    margin-top: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 350px;
+    height: 350px;
+    background: url("/assets/images/intro-bg.png") no-repeat center center scroll;
+    background-color: white;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  .card{
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+.card{
+  margin-top: 180px;
+  margin-bottom: 150px;
+  padding: 5px;
+  margin-left: 50px;
+  margin-right: 50px;
+  text-align: center;
+  height: auto;
+  width: auto;
+  border-color: #ffc001;
+}
+.card-title{
+  padding-bottom: 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border-bottom: 5px solid #ffc001;
+}
+.card-block{
+}
+.form-group{
+  margin-bottom: 30px;
+  padding-right: 10px;
+}
+#btn-section{
+  margin-top: 30px;
+}
+#form-section{
+  border-bottom: 5px solid #ffc001;
+}
+#crt-acc-btn{
+  margin-right: 10px;
+      border-radius: 20px;
+      padding-right: 20px;
+      padding-left: 20px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+margin-right: auto;
+    }
+#lgn-btn{
+  margin-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
+    border-radius: 20px;
+    margin-left: auto;
+  }
+#logo{
+
+}
+#banner-section{
+  width: 100%;
+  height: 7%;
+  border-bottom: 5px solid solid #FFC001;
+  background: url("/assets/images/login-bg.png") no-repeat center center scroll;
+  background-color: white;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+    border-bottom: 5px solid #ffc001;
+}
+#lostpwr{
+  margin-top: 20px;
+}
+.btn {
+  font-family: 'Coiny', cursive;
+  font-weight: 400;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+  border-radius: 0; }
+
+.btn-default {
+  color: #606060;
+  border: 1px solid #ffc001;
+  border-radius: 20px;
+  background-color: transparent; }
+  .btn-default:focus, .btn-default:hover {
+    color: #606060;
+    border: 1px solid #FFC001;
+    outline: none;
+    background-color: #FFC001; }

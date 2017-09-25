@@ -5,13 +5,15 @@ namespace BuiaFacil\Http\Controllers;
 use BuiaFacil\User;
 use Illuminate\Http\Request;
 
-class UsersController extends Controller {
+class UsersController extends Controller
+{
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index() {
+    public function index()
+    {
         return User::all();
     }
 
@@ -20,7 +22,8 @@ class UsersController extends Controller {
      *
      * @return \Illuminate\Http\Response
      */
-    public function create() {
+    public function create()
+    {
         //
     }
 
@@ -30,7 +33,8 @@ class UsersController extends Controller {
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request) {
+    public function store(Request $request)
+    {
         return User::create($request->all());
     }
 
@@ -40,8 +44,9 @@ class UsersController extends Controller {
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id) {
-        return User::find($id);
+    public function show($id)
+    {
+        return response()->json(User::find($id));
     }
 
     /**
@@ -50,7 +55,8 @@ class UsersController extends Controller {
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id) {
+    public function edit($id)
+    {
         //
     }
 
@@ -61,10 +67,23 @@ class UsersController extends Controller {
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id) {
-        $user = User::find($id);
-        $user->fill($request->all());
-        return $user->save();
+    public function update(Request $request, $id)
+    {
+        $user = $request->user();
+        try {
+            $validator = Validator::make($request->all(), [
+                'nome' => 'required|string|max:255|alpha|min:3',
+                'email' => 'required|string|email|max:255|unique:users',
+                'dataNascimento' => 'required|date_format:Ymd'
+            ]);
+            if ($validator->fails())
+                return response($validator->errors(), 419);
+            $user->fill($request->all());
+            $user->save();
+            return response('User updated', 200);
+        } catch (\Exception $exception) {
+            return response($exception->getMessage(), 401);
+        }
     }
 
     /**
@@ -73,7 +92,8 @@ class UsersController extends Controller {
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id) {
+    public function destroy($id)
+    {
         return User::delete($id);
     }
 }

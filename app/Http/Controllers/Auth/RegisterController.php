@@ -4,10 +4,12 @@ namespace BuiaFacil\Http\Controllers\Auth;
 
 use BuiaFacil\User;
 use BuiaFacil\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
-class RegisterController extends Controller {
+class RegisterController extends Controller
+{
     /*
     |--------------------------------------------------------------------------
     | Register Controller
@@ -21,19 +23,14 @@ class RegisterController extends Controller {
 
     use RegistersUsers;
 
-    /**
-     * Where to redirect users after registration.
-     *
-     * @var string
-     */
-    protected $redirectTo = '/home';
 
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct() {
+    public function __construct()
+    {
         $this->middleware('guest');
     }
 
@@ -43,14 +40,18 @@ class RegisterController extends Controller {
      * @param  array $data
      * @return \BuiaFacil\User
      */
-    protected function store(Request $request) {
+    protected function store(Request $request)
+    {
         try {
-            $this->validate($request, [
-                'name' => 'required|string|max:255',
+            $validator = Validator::make($request->all(), [
+                'nome' => 'required|string|max:255|min:3|alpha',
                 'email' => 'required|string|email|max:255|unique:users',
                 'password' => 'required|string|min:6|confirmed',
+                'cpf' => 'required|size:11|unique:users',
+                'dataNascimento' => 'required|date_format:Ymd'
             ]);
-
+            if ($validator->fails())
+                return response($validator->errors(), 419);
 
             $user = new User();
             $user->fill($request->all());
@@ -59,7 +60,7 @@ class RegisterController extends Controller {
 
             return response('User created', 200);
         } catch (\Exception $exception) {
-            return response($exception->getMessage(), $exception->getCode());
+            return response($exception->getMessage(), 401);
         }
     }
 }
