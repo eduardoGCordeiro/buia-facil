@@ -4,24 +4,21 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMensagensTable extends Migration
-{
+class CreateMensagensTable extends Migration {
     /**
      * Run the migrations.
      *
      * @return void
      */
-    public function up()
-    {
+    public function up() {
         Schema::create('mensagens', function (Blueprint $table) {
-            $table->increments('idmensagens');
+            $table->increments('id');
+            $table->integer('festa_id', false, true);
             $table->string('titulo');
-            $table->longText('corpo');
-            $table->unsignedInteger('festa_idfesta');
-
-            $table->foreign('festa_idfesta')->references('idfesta')->on('festa');
-
+            $table->longText('texto');
             $table->timestamps();
+
+            $table->foreign('festa_id')->references('id')->on('festas');
         });
     }
 
@@ -30,8 +27,7 @@ class CreateMensagensTable extends Migration
      *
      * @return void
      */
-    public function down()
-    {
+    public function down() {
         Schema::dropIfExists('mensagens');
     }
 }

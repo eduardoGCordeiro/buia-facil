@@ -14,12 +14,12 @@ class CreateFotosTable extends Migration
     public function up()
     {
         Schema::create('fotos', function (Blueprint $table) {
-            $table->increments('idfotos');
-            $table->string('nomefoto');
+            $table->increments('id');
+            $table->string('path');
             $table->boolean('aprovada');
-            $table->unsignedInteger('festa_idfesta');
+            $table->unsignedInteger('festa_id');
 
-            $table->foreign('festa_idfesta')->references('idfesta')->on('festa');
+            $table->foreign('festa_id')->references('id')->on('festas');
 
             $table->timestamps();
         });

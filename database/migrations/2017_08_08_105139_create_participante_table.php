@@ -14,13 +14,13 @@ class CreateParticipanteTable extends Migration
     public function up()
     {
         Schema::create('participante', function (Blueprint $table) {
-            $table->unsignedInteger('users_idusuario');
-            $table->unsignedInteger('festa_idfesta');
-            $table->dateTime('horaEntrouNaFesta');
+            $table->unsignedInteger('user_id');
+            $table->unsignedInteger('festa_id');
+            $table->dateTime('hora_entrada');
             $table->char('presenca',1);
 
-            $table->foreign('users_idusuario')->references('idusuario')->on('users');
-            $table->foreign('festa_idfesta')->references('idfesta')->on('festa');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('festa_id')->references('id')->on('festas');
 
             $table->timestamps();
         });
