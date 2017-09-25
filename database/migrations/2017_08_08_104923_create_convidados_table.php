@@ -14,13 +14,13 @@ class CreateConvidadoTable extends Migration
     public function up()
     {
         Schema::create('convidado', function (Blueprint $table) {
-            $table->unsignedInteger('users_idusuario');
-            $table->boolean('temPermissaoParaConvite');
-            $table->unsignedInteger('festa_idfesta');
+            $table->unsignedInteger('user_id');
+            $table->boolean('tem_permissao_convite');
+            $table->unsignedInteger('festa_id');
             $table->timestamps();
 
-            $table->foreign('users_idusuario')->references('idusuario')->on('users');
-            $table->foreign('festa_idfesta')->references('idfesta')->on('festa');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('festa_id')->references('id')->on('festa');
         });
     }
 

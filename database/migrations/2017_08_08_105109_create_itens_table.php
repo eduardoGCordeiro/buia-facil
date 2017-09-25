@@ -14,12 +14,12 @@ class CreateItemTable extends Migration
     public function up()
     {
         Schema::create('item', function (Blueprint $table) {
-            $table->unsignedInteger('festa_idfesta');
+            $table->unsignedInteger('festa_id');
             $table->string('nome');
-            $table->decimal('precoIndividual', 10,2);
+            $table->decimal('preco_individual', 10,2);
             $table->integer('quantidade');
 
-            $table->foreign('festa_idfesta')->references('idfesta')->on('festa');
+            $table->foreign('festa_id')->references('id')->on('festa');
 
             $table->timestamps();
         });

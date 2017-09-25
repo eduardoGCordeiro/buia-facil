@@ -14,12 +14,12 @@ class CreateVisitaTable extends Migration
     public function up()
     {
         Schema::create('visita', function (Blueprint $table) {
-            $table->unsignedInteger('users_idusuario');
-            $table->unsignedInteger('festa_idfesta');
-            $table->dateTime('horaVisita');
+            $table->unsignedInteger('user_id');
+            $table->unsignedInteger('festa_id');
+            $table->dateTime('hora_visita');
 
-            $table->foreign('users_idusuario')->references('idusuario')->on('users');
-            $table->foreign('festa_idfesta')->references('idfesta')->on('festa');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('festa_id')->references('id')->on('festa');
 
             $table->timestamps();
         });

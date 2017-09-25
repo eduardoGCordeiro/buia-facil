@@ -14,18 +14,15 @@ class CreateFestaTable extends Migration
     public function up()
     {
         Schema::create('festa', function (Blueprint $table) {
-            $table->increments('idfesta');
-            $table->unsignedInteger('users_idusuario');
-            $table->decimal('valorIngresso', 10,2);
+            $table->increments('id');
+            $table->unsignedInteger('user_id');
+            $table->decimal('valor_ingresso', 10,2);
             $table->string('endereco');
             $table->string('cidade');
             $table->string('pais');
             $table->dateTime('data');
-            //Trocado o nome de ehParticular só para particular
             $table->boolean('particular');
-
-            $table->foreign('users_idusuario')->references('idusuario')->on('users');
-
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
             $table->softDeletes();
         });
