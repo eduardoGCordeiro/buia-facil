@@ -4,24 +4,21 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateItemTable extends Migration
-{
+class CreateItemTable extends Migration {
     /**
      * Run the migrations.
      *
      * @return void
      */
-    public function up()
-    {
-        Schema::create('item', function (Blueprint $table) {
-            $table->unsignedInteger('festa_idfesta');
+    public function up() {
+        Schema::create('itens', function (Blueprint $table) {
+            $table->integer('festa_id', false, true);
             $table->string('nome');
-            $table->decimal('precoIndividual', 10,2);
+            $table->decimal('preco_individual', 10, 2);
             $table->integer('quantidade');
-
-            $table->foreign('festa_idfesta')->references('idfesta')->on('festa');
-
             $table->timestamps();
+
+            $table->foreign('festa_id')->references('id')->on('festa');
         });
     }
 
@@ -30,8 +27,7 @@ class CreateItemTable extends Migration
      *
      * @return void
      */
-    public function down()
-    {
-        Schema::dropIfExists('item');
+    public function down() {
+        Schema::dropIfExists('itens');
     }
 }
