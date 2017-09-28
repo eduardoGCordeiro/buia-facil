@@ -7,12 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class Evento extends Model
 {
 
-    protected $table = "festa";
+    protected $table = "festas";
 
 
     protected $fillable = [
-        'users_idusuario',
-        'valorIngresso',
+        'user_id',
+        'valor_ingresso',
         'endereco',
         'cidade',
         'pais',

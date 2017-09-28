@@ -6,10 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Convidado extends Model
 {
-    protected $table = "convidado";
+    protected $table = "convidados";
     protected $fillable = [
-        'users_idusuario',
-        'temPermissaoParaConvite',
-        'festa_idfesta'
+        'user_id',
+        'tem_permissao_convite',
+        'festa_id'
     ];
 }

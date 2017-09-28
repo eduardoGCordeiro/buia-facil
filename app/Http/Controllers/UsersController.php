@@ -14,7 +14,11 @@ class UsersController extends Controller
      */
     public function index()
     {
-        return User::all();
+        try {
+            return response()->json(User::all());
+        } catch (\Exception $exception) {
+            response($exception->getMessage(), 419);
+        }
     }
 
     /**
@@ -35,7 +39,7 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        return User::create($request->all());
+        //
     }
 
     /**
@@ -74,13 +78,13 @@ class UsersController extends Controller
             $validator = Validator::make($request->all(), [
                 'nome' => 'required|string|max:255|alpha|min:3',
                 'email' => 'required|string|email|max:255|unique:users',
-                'dataNascimento' => 'required|date_format:Ymd'
+                'data_de_nascimento' => 'required|date_format:Ymd'
             ]);
             if ($validator->fails())
                 return response($validator->errors(), 419);
             $user->fill($request->all());
             $user->save();
-            return response('User updated', 200);
+            return response('Usuário atualizado', 200);
         } catch (\Exception $exception) {
             return response($exception->getMessage(), 401);
         }
@@ -94,6 +98,11 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        return User::delete($id);
+        try {
+            User::delete($id);
+            return resolve('Usuário deletado', 200);
+        } catch (\Exception $exception) {
+            return response($exception->getMessage(), 401);
+        }
     }
 }

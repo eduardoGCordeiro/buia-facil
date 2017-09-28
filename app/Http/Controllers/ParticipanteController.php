@@ -38,8 +38,8 @@ class ParticipanteController extends Controller
     {
         try {
             $validator = Validator::make($request->all(), [
-                'festa_idfesta' => 'required',
-                'horaEntrouNaFesta' => 'required|alpha|max:1'
+                'festa_id' => 'required',
+                'presenca' => 'required|alpha|max:1'
             ]);
             if ($validator->fails())
                 return response($validator->errors(), '419');
@@ -61,7 +61,7 @@ class ParticipanteController extends Controller
      */
     public function show(Request $request)
     {
-        return
+        return response()->json($request->user());
     }
 
     /**

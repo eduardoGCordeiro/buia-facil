@@ -48,7 +48,7 @@ class RegisterController extends Controller
                 'email' => 'required|string|email|max:255|unique:users',
                 'password' => 'required|string|min:6|confirmed',
                 'cpf' => 'required|size:11|unique:users',
-                'dataNascimento' => 'required|date_format:Ymd'
+                'data_de_nascimento' => 'required|date_format:Ymd'
             ]);
             if ($validator->fails())
                 return response($validator->errors(), 419);
@@ -58,7 +58,7 @@ class RegisterController extends Controller
             $user->password = sha1($request->password);
             $user->save();
 
-            return response('User created', 200);
+            return response('Usuário criado', 200);
         } catch (\Exception $exception) {
             return response($exception->getMessage(), 401);
         }

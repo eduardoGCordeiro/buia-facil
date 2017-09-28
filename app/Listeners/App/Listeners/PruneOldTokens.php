@@ -27,6 +27,7 @@ class PruneOldTokens
      */
     public function handle(RefreshTokenCreated $event)
     {
+        //
         DB::table('oauth_refresh_tokens')
             ->where('id', '<>', $event->refreshTokenId)
             ->where('access_token_id', '<>', $event->accessTokenId)
