@@ -6,13 +6,16 @@ import {EventoComponent} from "./evento/evento.component";
 import {NovoEventoComponent} from "./novo-evento/novo-evento.component";
 import {InicioComponent} from "./inicio/inicio.component";
 import {LoginComponent} from "./login/login.component";
+import {CadastroComponent} from "./cadastro/cadastro.component";
+
 
 const pagesRoutes: Routes = [{
   path: '', component: PagesComponent, children: [
     {path: 'inicio', component: InicioComponent},
     {path: 'login', component: LoginComponent},
     {path: 'evento', component: EventoComponent},
-    {path: 'novo-evento', component: NovoEventoComponent}
+    {path: 'novo-evento', component: NovoEventoComponent},
+    {path: 'cadastro', component: CadastroComponent}
   ]
 }];
 

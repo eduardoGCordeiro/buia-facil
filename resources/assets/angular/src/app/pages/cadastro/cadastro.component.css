@@ -1,0 +1,70 @@
+body {     padding: 0;     outline: none;     font-family: 'Coiny', cursive;
+    display: block;     background: url("/assets/images/login-bg.png");     text-align:
+        center;     margin-top: 4%; margin-bottom: 3.5%;    font-color: #FFC001;     color: #ffc001;
+
+}
+
+.submit {
+    text-align: center;
+    float: center;
+}
+
+#cadastro-card .cadastro-form {
+    color: #606060;
+}
+
+#cadastro-card {
+    border-radius: 20px;
+    border: 5px solid #FFC001;
+    background-color: #ffffffcb;
+    padding: 5% 15% 3% 15%;
+}
+
+#cadastro-card .cadastro-form {
+    color: #606060;
+}
+
+
+#cadastro-card .card-title {
+    margin-bottom: 20px;
+}
+
+form-group{
+    margin-bottom:1rem;
+    height: 2px;
+}
+.form-text {
+    display:block;
+    margin-top:.25rem
+}
+.form-row{display:-ms-flexbox;
+    display:flex;
+    -ms-flex-wrap:wrap;
+    flex-wrap:wrap;
+    margin-right:-5px;
+    margin-left:-5px
+}
+td {
+    color: #000;
+}
+
+input {
+    margin-bottom: 4%;
+}
+
+.button {
+    padding-top: 20px;
+    text-align: center;
+}
+
+.checkbox label{
+    padding: 4% 8% 2% 0%;
+    color: #000;
+    text-align: center;
+}
+.checkbox input {
+}
+
+.container-cad {
+    max-height: 20%;
+}
